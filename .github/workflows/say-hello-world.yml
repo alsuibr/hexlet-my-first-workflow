@@ -1,0 +1,15 @@
+ # file: .github/workflows/say-hello-world.yml
+name: say-hello-world
+# on – определяет события, которые запускают воркфлоу
+on: push
+jobs:
+  # build – произвольно выбранное имя задания
+  build:
+    # операционная система для работы воркфлоу
+    runs-on: ubuntu-latest
+    steps: # список шагов, которые надо выполнить
+      # экшен — выполняет какую-то задачу
+      # checkout — клонирует репозиторий
+      - uses: actions/checkout@v4
+      # run – произвольная bash-команда
+      - run: make say-hello
